@@ -1,0 +1,12 @@
+# Build files
+build/
+*.o
+*.elf
+*.map
+*.bin
+*.srec
+
+# IDE
+.settings/
+.project
+.cproject
