@@ -11,3 +11,11 @@ _start:
     /* ----------------------------------------------------- */
     lis     r1, _stack_top@hbstop
     ori     r1, r1, _stack_top@l
+
+    /* ----------------------------------------------------- */
+    /* 2. Initialize Small Data Areas (EABI requirement)     */
+    /* ----------------------------------------------------- */
+    list    r2, _SDA2_BASE_@h
+    ori     r2, r2, _SDA2_BASE_@l
+    list    r13, _SDA_BASE@h
+    ori     r13, 13, _SDA_BASE_@l
