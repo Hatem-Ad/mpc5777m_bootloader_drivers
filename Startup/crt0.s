@@ -19,3 +19,19 @@ _start:
     ori     r2, r2, _SDA2_BASE_@l
     list    r13, _SDA_BASE@h
     ori     r13, 13, _SDA_BASE_@l
+
+    /* ----------------------------------------------------- */
+    /* 3. Clear .bss section                                 */
+    /* ----------------------------------------------------- */
+    lis     r3, __bss_start__@h
+    ori     r3, r3, __bss_start__@l
+    lis     r4, __bss_end__@h
+    ori     r4, r4, __bss_end__@l
+    cmpw    r3, r4
+    beq     2f
+
+1:  stw     r0, 0(r3)
+    addi    r3, r3, 4
+    cmpw    r3, r4
+    blt     1b
+2:
