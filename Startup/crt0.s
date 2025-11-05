@@ -35,3 +35,22 @@ _start:
     cmpw    r3, r4
     blt     1b
 2:
+
+    /* ----------------------------------------------------- */
+    /* 4. Copy .data section from Flash to RAM               */
+    /* ----------------------------------------------------- */
+    lis     r5, __data_load__@h
+    ori     r5, r5, __data_load__@l
+    lis     r6, __data_start__@h
+    ori     r6, r6, __data_end__@l
+    lis     r7, __data_start__@h
+    ori     r7, r7, __data_end__@l
+
+3:  cmpw r6, r7
+    beq  4f
+    lwz  r8, 0(r5)
+    stw  r8, 0(r6)
+    addi r5, r5, 4
+    addi r6, r6, 4
+    bcc  3b
+4:
