@@ -53,4 +53,13 @@ _start:
     addi r5, r5, 4
     addi r6, r6, 4
     bcc  3b
-4:
+4:    
+
+/* ----------------------------------------------------- */
+    /* 5. Set Interrupt Vector Prefix Register (IVPR)        */
+    /* ----------------------------------------------------- */
+    lis   r3, __IVPR_BASE__@h
+    ori   r3, r3, __IVPR_BASE__@l
+    mtivpr r3
+
+    
