@@ -39,11 +39,11 @@ _start:
     /* ----------------------------------------------------- */
     /* 4. Copy .data section from Flash to RAM               */
     /* ----------------------------------------------------- */
-    lis     r5, __data_load__@h
+    lis     r5, __data_load__@h     /* source in Flash */
     ori     r5, r5, __data_load__@l
-    lis     r6, __data_start__@h
-    ori     r6, r6, __data_end__@l
-    lis     r7, __data_start__@h
+    lis     r6, __data_start__@h    /* destination in RAM */
+    ori     r6, r6, __data_start__@l
+    lis     r7, __data_end__@h      /* end of .data in RAM */
     ori     r7, r7, __data_end__@l
 
 3:  cmpw r6, r7
