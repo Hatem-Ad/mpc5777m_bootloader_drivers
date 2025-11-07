@@ -1,5 +1,5 @@
 /*-----------------------------------------------------------*/
-/*  crt0.S - Startup code for MPC5777M (e200z7 core)         */
+/*  C_RunTime0.s - Startup code for MPC5777M (e200z7 core)   */
 /*-----------------------------------------------------------*/
 
 .section .init, "ax"        /* code sectiob for startup */
@@ -9,16 +9,16 @@ _start:
     /* ----------------------------------------------------- */
     /* 1. Initialize Stack Pointer (SP = top of SRAM)        */
     /* ----------------------------------------------------- */
-    lis     r1, _stack_top@hbstop
+    lis     r1, _stack_top@h
     ori     r1, r1, _stack_top@l
 
     /* ----------------------------------------------------- */
     /* 2. Initialize Small Data Areas (EABI requirement)     */
     /* ----------------------------------------------------- */
-    list    r2, _SDA2_BASE_@h
+    lis    r2, _SDA2_BASE_@h
     ori     r2, r2, _SDA2_BASE_@l
-    list    r13, _SDA_BASE@h
-    ori     r13, 13, _SDA_BASE_@l
+    lis    r13, _SDA_BASE@h
+    ori     r13, r13, _SDA_BASE_@l
 
     /* ----------------------------------------------------- */
     /* 3. Clear .bss section                                 */
@@ -52,10 +52,10 @@ _start:
     stw  r8, 0(r6)
     addi r5, r5, 4
     addi r6, r6, 4
-    bcc  3b
+    blt  3b
 4:    
 
-/* ----------------------------------------------------- */
+    /* ----------------------------------------------------- */
     /* 5. Set Interrupt Vector Prefix Register (IVPR)        */
     /* ----------------------------------------------------- */
     lis   r3, __IVPR_BASE__@h
