@@ -10,3 +10,7 @@ MEMORY
 
 /* =========[ ENTRY ]========= */
 ENTRY(_start)
+
+/* =========[ SDA BASES for EABI ]========= */
+_SDA_BASE_  = __sdata_start__;   /* r13 base (writable small data)   */
+_SDA2_BASE_ = __sdata2_start__;  /* r2  base (RO small data/consts)  */
