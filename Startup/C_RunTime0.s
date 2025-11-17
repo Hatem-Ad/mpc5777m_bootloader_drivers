@@ -30,7 +30,8 @@ _start:
     cmpw    r3, r4
     beq     2f
 
-1:  stw     r0, 0(r3)
+1:
+    stw     r0, 0(r3)
     addi    r3, r3, 4
     cmpw    r3, r4
     blt     1b
