@@ -9,3 +9,13 @@ void Bootloader_Config()
 {
 
 }
+
+void Bootloader_JumpToApp()
+{
+
+}
+
+void Bootloader_Run()
+{
+
+}
