@@ -5,3 +5,11 @@ LDFILE = linker/Bootloader.ld
 
 SRC = Startup/C_RunTime.s \
 	  Bootloader/bl_main.c
+
+all: Bootloader.elf
+
+Bootloader.elf: $(SRC)
+	$(CC) $(CFLAGS) -T$(LDFILE) -o Bootloader.elf
+
+Clean:
+	rm -f Bootloader.elf
