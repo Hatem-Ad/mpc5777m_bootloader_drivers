@@ -39,6 +39,16 @@ SECTIONS
     __data_end__ = .;
   } SRAM AT > FLASH
 
+  __data_load__ = LOADADDR(.data);
+
+  /* ---- small data (SDA / SDA2) ---- */
+  .sdata2 : {
+    __sdata2_start__ = .;
+    *(.sdata*)
+    __sdata2_end__ = .;
+  } SRAM AT > FLASH
+
+
 
 
 
