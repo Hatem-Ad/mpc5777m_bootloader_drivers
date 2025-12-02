@@ -31,4 +31,15 @@ SECTIONS
     *(.text*)
     *(.rodata*)
   } > FLASH
+
+  /* ---- .data (Flash -> RAM copy) ---- */
+  .data : {
+    __data_start__ = .;
+    *(.data*)
+    __data_end__ = .;
+  } SRAM AT > FLASH
+
+
+
+
 }
