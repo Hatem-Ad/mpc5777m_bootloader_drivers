@@ -23,3 +23,12 @@ _SDA_BASE_  = __sdata_start__;   /* r13 base (writable small data)   */
 _SDA2_BASE_ = __sdata2_start__;  /* r2  base (RO small data/consts)  */
 
 /* ===== SECTIONS ===== */
+SECTIONS
+{
+  /* code */
+  .text : {
+    KEEP(*(.init))    /* C_RunTime0.s */
+    *(.text*)
+    *(.rodata*)
+  } > FLASH
+}
