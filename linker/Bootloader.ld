@@ -48,6 +48,11 @@ SECTIONS
     __sdata2_end__ = .;
   } SRAM AT > FLASH
 
+  .sdata : {
+        __sdata_start__ = .;
+        *(.sdata*)
+        __sdata_end__ = .;
+    } > SRAM
 
 
 
