@@ -53,7 +53,16 @@ SECTIONS
         *(.sdata*)
         __sdata_end__ = .;
     } > SRAM
+    
+    /* ---- .bss ---- */
+    .bss (NOLOAD) : {
+        __bss_start__ = .;
+        *(.bss*)
+        *(COMMON)
+        __bss_end__ = .;
+    } > SRAM
 
+    _end = .;
 
 
 
