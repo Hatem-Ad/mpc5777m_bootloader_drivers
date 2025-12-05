@@ -10,3 +10,8 @@ MEMORY
   FLASH (rx)  : ORIGIN = 0x, LENGTH = K
   SRAM  (rwx) : ORIGIN = 0x, LENGTH = K
 }
+
+/* ===== --- ---- ===== */
+_stack_top   = ORIGIN(SRAM) + LENGTH(SRAM);
+
+/* =========[ ---- ----]========= */
