@@ -63,7 +63,4 @@ SECTIONS
     } > SRAM
 
     _end = .;
-
-
-
 }
