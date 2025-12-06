@@ -19,5 +19,6 @@ void Bootloader_Run()
 {
     Bootloader_Init();
     Bootloader_Config();
+    Bootloader_JumpToApp();
 
 }
