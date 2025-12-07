@@ -25,6 +25,11 @@ _SDA2_BASE_ = __sdata2_start__;  /* r2  base (RO small data/consts)  */
 /* ===== SECTIONS ===== */
 SECTIONS
 {
+  /* ---- IVOR Vectors ---- */
+    .vectors ALIGN(16) : {
+        KEEP(*(.vectors))
+    } > FLASH
+
   /* code */
   .text : {
     KEEP(*(.init))    /* C_RunTime0.s */
