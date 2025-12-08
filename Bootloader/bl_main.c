@@ -2,7 +2,7 @@
 
 void Bootloader_Init()
 {
-
+    /*  init clock, uart, gpio, flash */
 }
 
 void Bootloader_Config()
