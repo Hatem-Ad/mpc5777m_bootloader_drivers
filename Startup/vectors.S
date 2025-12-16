@@ -33,4 +33,4 @@ IVOR6_Handler:
 IVOR7_Handler:
     b IVOR7_Handler
 
-/* ... we can added more IVORs later ... */
+/* ... ... */
