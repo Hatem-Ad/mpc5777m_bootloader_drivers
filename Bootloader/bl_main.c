@@ -3,6 +3,8 @@
 void Bootloader_Init()
 {
     /*  init clock, uart, gpio, flash */
+    BL_GPIO_init_all();
+    BL_UART_init();
 }
 
 void Bootloader_Config()
