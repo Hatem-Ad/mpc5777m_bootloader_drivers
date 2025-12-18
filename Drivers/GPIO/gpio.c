@@ -15,3 +15,13 @@ DRV_GPIO_config()
 {
 
 }
+
+DRV_GPIO_read()
+{
+
+}
+
+DRV_GPIO_write()
+{
+
+}
