@@ -9,3 +9,13 @@ DRV_FLASH_read()
 {
 
 }
+
+DRV_FLASH_write()
+{
+
+}
+
+DRV_FLASH_check()
+{
+
+}
