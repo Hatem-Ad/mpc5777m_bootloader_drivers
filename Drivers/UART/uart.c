@@ -2,22 +2,22 @@
 #include "UART.h"
 
 
-DRV_UART_init()
+void DRV_UART_init()
 {
 
 }
 
-DRV_UART_Config()
+void DRV_UART_Config()
 {
 
 }
 
-DRV_UART_sendString()
+void DRV_UART_sendString()
 {
 
 }
 
-DRV_UART_received()
+void DRV_UART_received()
 {
 
 }
